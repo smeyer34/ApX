@@ -12,6 +12,7 @@
      app:boxBackgroundColor="@color/white"
      app:layout_constraintStart_toStartOf="parent"
      android:hint="Enter Message"
+     app:layout_constraintEnd_toStartOf="@id/fab_send"
      app:layout_constraintBottom_toBottomOf="parent"
      android:layout_height="wrap_content">
      <com.google.android.material.textfield.TextInputEditText
@@ -20,6 +21,7 @@
  </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
+        android:id="@+id/fab_send"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/message"
