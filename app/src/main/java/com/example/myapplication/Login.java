@@ -34,9 +34,9 @@ public class Login extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String e = email.getEditText().getText().toString();
-                String p = password.getEditText().getText().toString();
-                auth.signInWithEmailAndPassword(e,p).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                String eml = email.getEditText().getText().toString();
+                String pas = password.getEditText().getText().toString();
+                auth.signInWithEmailAndPassword(eml,pas).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
@@ -54,15 +54,15 @@ public class Login extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String e = email.getEditText().getText().toString();
-                String p = password.getEditText().getText().toString();
-                auth.createUserWithEmailAndPassword(e, p).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                String eml = email.getEditText().getText().toString();
+                String pas = password.getEditText().getText().toString();
+                auth.createUserWithEmailAndPassword(eml, pas).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(Login.this, "Account Created Successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, "Success", Toast.LENGTH_SHORT).show();
                         }else{
-                            Toast.makeText(Login.this, "Signup Failed", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, "Failed", Toast.LENGTH_SHORT).show();
 
                         }
                     }
