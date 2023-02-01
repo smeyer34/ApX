@@ -24,10 +24,11 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        email = findViewById(R.id.email);
-        password = findViewById(R.id.password);
         login = findViewById(R.id.login);
         signup = findViewById(R.id.signup);
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.password);
+
 
         auth = FirebaseAuth.getInstance();
 
@@ -40,6 +41,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+                            Toast.makeText(Login.this, "Login Success", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(Login.this,MainActivity.class));
                         }else{
                             Toast.makeText(Login.this, "Login Failed", Toast.LENGTH_SHORT).show();
